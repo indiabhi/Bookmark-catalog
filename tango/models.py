@@ -5,9 +5,13 @@ from django.db import models
 # Create your models here.
 
 
+
 class Category(models.Model):
 	name = models.CharField(max_length=100,
 							unique=True)
+	views = models.IntegerField(default=0)
+	likes = models.IntegerField(default=0)
+	
 
 	def __str__(self):
 		return self.name
@@ -20,6 +24,10 @@ class Page(models.Model):
 	views = models.IntegerField(default=0)
 
 	def __str__(self):
-		self.title
+		#pass
+		return self.title
+
+
+
 
 

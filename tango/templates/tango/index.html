@@ -10,7 +10,23 @@
 	<body>
 		<a href = "/tango/about/"> Index </a>
 		<h1>Reddit says....</h1>
-		hello world! <strong>{{ bold_message }} </strong><br />
+		hello world! <!-- <strong>{{ bold_message }} </strong><br />
+
+		<a href="/rango/add_category/">Add a New Category</a>
+
+
+	-->
+		<a href="/tango/add_category/">Add a New Category</a>
+
+		{% if categories %}
+			<ul>
+				{% for category in categories %}
+				<li><a href="/tango/category/{{ category.url }}"> || {{ category.name }} </li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<strong> There are no categories present </strong>
+		{% endif %}
 		<img src="{% static "Rango.jpg" %}" alt="Picture of Rango" height="200px", width="200px" />
 	</body>
 
